@@ -19,9 +19,7 @@ public class Shoot : MonoBehaviour
             Transform tform = Instantiate(bullet, canon.transform.position, Quaternion.identity).transform;
             tform.eulerAngles += transform.eulerAngles;
             //Instantiate(bullet, canon.transform.position, Quaternion.identity);
-            tform.GetComponent<BulletMovement>().CalculateVelocity(transform.eulerAngles.y);
-
-            Debug.Log("crea bala");
+            tform.GetComponent<BulletMovement>().Velocity(transform.eulerAngles.y);
         }
     }
 }
