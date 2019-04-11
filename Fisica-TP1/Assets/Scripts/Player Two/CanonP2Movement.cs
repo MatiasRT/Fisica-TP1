@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanonMovement : MonoBehaviour
+public class CanonP2Movement : MonoBehaviour
 {
     [SerializeField] GameObject canon;
-    [SerializeField] string input;
     [SerializeField] float speed;
 
     private void Update()
     {
-        float inputY = Input.GetAxis(input);
+        float inputY = Input.GetAxis("Vertical");
 
         canon.transform.Rotate(0, 0, -inputY * Time.deltaTime * speed);
     }

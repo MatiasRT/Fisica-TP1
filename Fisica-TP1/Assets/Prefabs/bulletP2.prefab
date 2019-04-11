@@ -69,7 +69,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1.5
+  m_Time: 3
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -78,13 +78,22 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.10135198
+        value: 0.2197144
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -136,9 +145,9 @@ GameObject:
   m_Component:
   - component: {fileID: 89707681989024237}
   - component: {fileID: 8978612864063695552}
-  - component: {fileID: 3939389486554999252}
+  - component: {fileID: 1311283659640566195}
   m_Layer: 0
-  m_Name: bullet
+  m_Name: bulletP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +216,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3939389486554999252
+--- !u!114 &1311283659640566195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,7 +225,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6169904469351593314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709721c02bc4f92449f638fee2f07fab, type: 3}
+  m_Script: {fileID: 11500000, guid: 79c61e662e0e137438450a014c066106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 8
+  velocity: -10

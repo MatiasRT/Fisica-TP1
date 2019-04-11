@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class ShootP1 : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     [SerializeField] Transform canon;
@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour
             Transform tform = Instantiate(bullet, canon.transform.position, Quaternion.identity).transform;
             tform.eulerAngles += transform.eulerAngles;
             //Instantiate(bullet, canon.transform.position, Quaternion.identity);
-            tform.GetComponent<BulletMovement>().Velocity(transform.eulerAngles.y);
+            tform.GetComponent<BulletP1Movement>().Velocity(transform.eulerAngles.y);
         }
     }
 }
