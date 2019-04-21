@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-    public Vector2 box;
+    public Vector2 position;
     public float width;
     public float height;
 
     void Start()
     {
-        box = transform.position;
+        position = transform.position;
     }
 }

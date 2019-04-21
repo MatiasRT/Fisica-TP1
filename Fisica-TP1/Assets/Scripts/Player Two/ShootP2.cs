@@ -9,17 +9,19 @@ public class ShootP2 : MonoBehaviour
 
     void Start()
     {
-        canon = GetComponent<Transform>();    
+        //canon = GetComponent<Transform>();    
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad0))
         {
-            Transform tform = Instantiate(bullet, canon.transform.position, Quaternion.identity).transform;
-            tform.eulerAngles += transform.eulerAngles;
-            //Instantiate(bullet, canon.transform.position, Quaternion.identity);
-            tform.GetComponent<BulletP2Movement>().Velocity(transform.eulerAngles.y);
+            /* Transform tform = Instantiate(bullet, canon.transform.position, Quaternion.identity).transform;
+             tform.eulerAngles += transform.eulerAngles;
+             //Instantiate(bullet, canon.transform.position, Quaternion.identity);
+             tform.GetComponent<BulletP2Movement>().Velocity(transform.eulerAngles.y);*/
+
+            GameObject go = Instantiate(bullet, canon.position, transform.rotation);
         }
     }
 }

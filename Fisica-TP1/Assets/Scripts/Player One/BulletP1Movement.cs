@@ -4,33 +4,46 @@ using UnityEngine;
 
 public class BulletP1Movement : MonoBehaviour
 {
-    [SerializeField] float velocity;
+    [SerializeField] float speed;
 
-    float time;
-    float grav = 9.8f;
-    private Vector2 xyVelocity;
+    [SerializeField] float grav;
+    float actualSpeed;
+    Vector3 newPos;
 
-    private void Awake()
+    CollisionManager cm;
+    GameObject p2;
+    Box bullet;
+    Box enemy;
+
+    private void Start()
     {
-        time = 0.0f;
+        newPos = transform.position;
+        actualSpeed = speed;
+
+        cm = CollisionManager.Instance;
+        p2 = GameManager.Instance.PlayerTwo;
+
+        bullet = gameObject.GetComponent<Box>();
+        enemy = p2.GetComponent<Box>();
     }
 
     void Update()
     {
-        time += Time.deltaTime;
+        newPos = transform.position;
 
-        float mru = xyVelocity.x * Time.deltaTime;
-        float shootFall = xyVelocity.y * Time.deltaTime + (-grav * Mathf.Sqrt(time)) * 0.5f * Time.deltaTime;
+        float ang = transform.eulerAngles.z * Mathf.Deg2Rad;
+        float vel = speed * Mathf.Cos(ang);
+        newPos.x += vel * Time.deltaTime;
 
-        transform.Translate(mru, shootFall, 0.0f);
+        float ang2 = transform.eulerAngles.z * Mathf.Deg2Rad;
+        float vel2 = actualSpeed * Mathf.Sin(ang2);
+        newPos.y += vel2 * Time.deltaTime - 0.5f * grav * Mathf.Sqrt(Time.deltaTime);
+        actualSpeed -= grav;
+
+        transform.position = newPos;
 
         CheckBoundaries();
-    }
-
-    public void Velocity(float degree)
-    {
-        xyVelocity.x = velocity * Mathf.Cos(degree);
-        xyVelocity.y = velocity * Mathf.Sin(degree);
+        CheckColl();
     }
 
     void CheckBoundaries()
@@ -38,6 +51,16 @@ public class BulletP1Movement : MonoBehaviour
         if (transform.position.x < -20.0f || transform.position.x > 20.0f
            || transform.position.y < -20.0f)
         {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void CheckColl()
+    {
+        Debug.Log("Checking...");
+        if (cm.CollisionDetector(bullet, enemy))
+        {
+            Debug.Log("Colision!");
             Destroy(this.gameObject);
         }
     }
