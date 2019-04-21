@@ -27,12 +27,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerOne;
     [SerializeField] GameObject playerTwo;
 
-    [SerializeField] TankP1Movement playerOneM;
-    [SerializeField] CanonP1Movement playerOneC;
-    [SerializeField] ShootP1 playerOneS;
-    [SerializeField] TankP2Movement playerTwoM;
-    [SerializeField] CanonP2Movement playerTwoC;
-    [SerializeField] ShootP2 playerTwoS;
     [SerializeField] Text text;
 
     public GameObject PlayerOne
@@ -56,38 +50,38 @@ public class GameManager : MonoBehaviour
     {
         if (timer > 5.0f)
         {
-            playerOneM.GetComponent<TankP1Movement>().enabled = false;
-            playerOneC.GetComponent<CanonP1Movement>().enabled = true;
+            playerOne.GetComponent<TankP1Movement>().enabled = false;
+            playerOne.GetComponent<CanonP1Movement>().enabled = true;
             text.text = "P1: Aim";
         }
         if (timer > 10.0f)
         {
-            playerOneC.GetComponent<CanonP1Movement>().enabled = false;
-            playerOneS.GetComponent<ShootP1>().enabled = true;
+            playerOne.GetComponent<CanonP1Movement>().enabled = false;
+            playerOne.GetComponentInChildren<ShootP1>().enabled = true;
             text.text = "P1: Shoot";
         }
         if (timer > 15.0f)
         {
-            playerOneS.GetComponent<ShootP1>().enabled = false;
-            playerTwoM.GetComponent<TankP2Movement>().enabled = true;
+            playerOne.GetComponentInChildren<ShootP1>().enabled = false;
+            playerTwo.GetComponent<TankP2Movement>().enabled = true;
             text.text = "P2: Move";
         }
         if (timer > 20.0f)
         {
-            playerTwoM.GetComponent<TankP2Movement>().enabled = false;
-            playerTwoC.GetComponent<CanonP2Movement>().enabled = true;
+            playerTwo.GetComponent<TankP2Movement>().enabled = false;
+            playerTwo.GetComponent<CanonP2Movement>().enabled = true;
             text.text = "P2: Aim";
         }
         if (timer > 25.0f)
         {
-            playerTwoC.GetComponent<CanonP2Movement>().enabled = false;
-            playerTwoS.GetComponent<ShootP2>().enabled = true;
+            playerTwo.GetComponent<CanonP2Movement>().enabled = false;
+            playerTwo.GetComponentInChildren<ShootP2>().enabled = true;
             text.text = "P2: Shoot";
         }
         if (timer > 30.0f)
         {
-            playerTwoS.GetComponent<ShootP2>().enabled = false;
-            playerOneM.GetComponent<TankP1Movement>().enabled = true;
+            playerTwo.GetComponentInChildren<ShootP2>().enabled = false;
+            playerOne.GetComponent<TankP1Movement>().enabled = true;
             timer = 0.0f;
             text.text = "P1: Move";
         }
