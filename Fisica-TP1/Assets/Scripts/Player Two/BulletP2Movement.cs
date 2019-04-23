@@ -5,12 +5,14 @@ using UnityEngine;
 public class BulletP2Movement : MonoBehaviour
 {
     [SerializeField] float speed;
-
     [SerializeField] float grav;
+
+    float velMru, velMruv;
     float actualSpeed;
     Vector3 newPos;
 
     CollisionManager cm;
+    Health health;
     GameObject p1;
     Box bullet;
     Box enemy;
@@ -25,19 +27,19 @@ public class BulletP2Movement : MonoBehaviour
 
         bullet = gameObject.GetComponent<Box>();
         enemy = p1.GetComponent<Box>();
+        health = p1.GetComponent<Health>();
     }
 
     void Update()
     {
         newPos = transform.position;
 
-        float ang = transform.eulerAngles.z * Mathf.Deg2Rad;
-        float vel = speed * Mathf.Cos(ang);
-        newPos.x += vel * Time.deltaTime;
+        velMru = speed * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
+        newPos.x += velMru * Time.deltaTime;
 
-        float ang2 = transform.eulerAngles.z * Mathf.Deg2Rad;
-        float vel2 = actualSpeed * Mathf.Sin(ang2);
-        newPos.y += vel2 * Time.deltaTime - 0.5f * grav * Mathf.Sqrt(Time.deltaTime);
+        velMruv = actualSpeed * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
+        newPos.y += velMruv * Time.deltaTime - 0.5f * grav * Mathf.Sqrt(Time.deltaTime);
+
         actualSpeed -= grav;
 
         transform.position = newPos;
@@ -60,6 +62,7 @@ public class BulletP2Movement : MonoBehaviour
         Debug.Log("Checking...");
         if (cm.CollisionDetector(bullet, enemy))
         {
+            health.Lives -= 1;
             Debug.Log("Colision!");
             Destroy(this.gameObject);
         }

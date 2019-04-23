@@ -8,7 +8,7 @@ public class Box : MonoBehaviour
     public float width;
     public float height;
 
-    void Start()
+    void Update()
     {
         position = transform.position;
     }

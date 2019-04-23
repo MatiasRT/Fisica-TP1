@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text textPlayer;
     [SerializeField] Text textTimer;
 
+    Health healthP1;
+    Health healthP2;
+
     public GameObject PlayerOne
     {
         get { return playerOne; }
@@ -40,6 +43,12 @@ public class GameManager : MonoBehaviour
         get { return playerTwo; }
     }
 
+    private void Start()
+    {
+        healthP1 = playerOne.GetComponent<Health>();
+        healthP2 = playerTwo.GetComponent<Health>();
+    }
+
     private void Update()
     {
         timer += Time.deltaTime;
@@ -48,8 +57,13 @@ public class GameManager : MonoBehaviour
         if(tTimer <= 1.0f)
             tTimer += 5.0f;
 
+        if (healthP1.Lives == 0)
+            Debug.Log("End Game: Winner p2");
+        if (healthP2.Lives == 0)
+            Debug.Log("End Game: Winner p1");
+
         ChangeTimerText(tTimer);
-        DisableScripts();
+        //DisableScripts();
     }
 
     void DisableScripts()
