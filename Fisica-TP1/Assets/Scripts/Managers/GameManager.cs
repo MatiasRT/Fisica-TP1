@@ -21,13 +21,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    [SerializeField] float timer;
+    float timer;
+    float tTimer = 6.0f;
 
     [SerializeField] GameObject playerOne;
     [SerializeField] GameObject playerTwo;
 
-    [SerializeField] Text text;
+    [SerializeField] Text textPlayer;
+    [SerializeField] Text textTimer;
 
     public GameObject PlayerOne
     {
@@ -42,8 +43,13 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
+        tTimer -= Time.deltaTime;
 
-        //DisableScripts();
+        if(tTimer <= 1.0f)
+            tTimer += 5.0f;
+
+        ChangeTimerText(tTimer);
+        DisableScripts();
     }
 
     void DisableScripts()
@@ -52,38 +58,49 @@ public class GameManager : MonoBehaviour
         {
             playerOne.GetComponent<TankP1Movement>().enabled = false;
             playerOne.GetComponent<CanonP1Movement>().enabled = true;
-            text.text = "P1: Aim";
+            ChangePlayerText("P1: Aim");
         }
         if (timer > 10.0f)
         {
             playerOne.GetComponent<CanonP1Movement>().enabled = false;
             playerOne.GetComponentInChildren<ShootP1>().enabled = true;
-            text.text = "P1: Shoot";
+            ChangePlayerText("P1: Shoot");
         }
         if (timer > 15.0f)
         {
             playerOne.GetComponentInChildren<ShootP1>().enabled = false;
             playerTwo.GetComponent<TankP2Movement>().enabled = true;
-            text.text = "P2: Move";
+            ChangePlayerText("P2: Move");
         }
         if (timer > 20.0f)
         {
             playerTwo.GetComponent<TankP2Movement>().enabled = false;
             playerTwo.GetComponent<CanonP2Movement>().enabled = true;
-            text.text = "P2: Aim";
+            ChangePlayerText("P2: Aim");
         }
         if (timer > 25.0f)
         {
             playerTwo.GetComponent<CanonP2Movement>().enabled = false;
             playerTwo.GetComponentInChildren<ShootP2>().enabled = true;
-            text.text = "P2: Shoot";
+            ChangePlayerText("P2: Shoot");
         }
         if (timer > 30.0f)
         {
             playerTwo.GetComponentInChildren<ShootP2>().enabled = false;
             playerOne.GetComponent<TankP1Movement>().enabled = true;
             timer = 0.0f;
-            text.text = "P1: Move";
+            ChangePlayerText("P1: Move");
         }
+    }
+
+    void ChangePlayerText(string newText)
+    {
+        textPlayer.text = newText;
+    }
+
+    void ChangeTimerText(float tTimer)
+    {
+        int time = (int)tTimer;
+        textTimer.text = time.ToString();
     }
 }
