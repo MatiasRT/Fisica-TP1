@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    float timer;
+    float deltatimer;
     float tTimer = 6.0f;
 
     [SerializeField] GameObject playerOne;
@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
 
     Health healthP1;
     Health healthP2;
+    ShootP1 shootP1;
+    ShootP2 shootP2;
 
     public GameObject PlayerOne
     {
@@ -47,11 +49,13 @@ public class GameManager : MonoBehaviour
     {
         healthP1 = playerOne.GetComponent<Health>();
         healthP2 = playerTwo.GetComponent<Health>();
+        shootP1 = playerOne.GetComponentInChildren<ShootP1>();
+        shootP2 = playerTwo.GetComponentInChildren<ShootP2>();
     }
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        deltatimer += Time.deltaTime;
         tTimer -= Time.deltaTime;
 
         if(tTimer <= 1.0f)
@@ -63,46 +67,49 @@ public class GameManager : MonoBehaviour
             Debug.Log("End Game: Winner p1");
 
         ChangeTimerText(tTimer);
-        //DisableScripts();
+        DisableScripts();
     }
 
     void DisableScripts()
     {
-        if (timer > 5.0f)
+        if (deltatimer > 5.0f)
         {
             playerOne.GetComponent<TankP1Movement>().enabled = false;
             playerOne.GetComponent<CanonP1Movement>().enabled = true;
+            
             ChangePlayerText("P1: Aim");
         }
-        if (timer > 10.0f)
+        if (deltatimer > 10.0f)
         {
             playerOne.GetComponent<CanonP1Movement>().enabled = false;
             playerOne.GetComponentInChildren<ShootP1>().enabled = true;
             ChangePlayerText("P1: Shoot");
         }
-        if (timer > 15.0f)
+        if (deltatimer > 15.0f)
         {
             playerOne.GetComponentInChildren<ShootP1>().enabled = false;
             playerTwo.GetComponent<TankP2Movement>().enabled = true;
             ChangePlayerText("P2: Move");
         }
-        if (timer > 20.0f)
+        if (deltatimer > 20.0f)
         {
             playerTwo.GetComponent<TankP2Movement>().enabled = false;
             playerTwo.GetComponent<CanonP2Movement>().enabled = true;
+            
             ChangePlayerText("P2: Aim");
         }
-        if (timer > 25.0f)
+        if (deltatimer > 25.0f)
         {
             playerTwo.GetComponent<CanonP2Movement>().enabled = false;
             playerTwo.GetComponentInChildren<ShootP2>().enabled = true;
             ChangePlayerText("P2: Shoot");
         }
-        if (timer > 30.0f)
+        if (deltatimer > 30.0f)
         {
             playerTwo.GetComponentInChildren<ShootP2>().enabled = false;
             playerOne.GetComponent<TankP1Movement>().enabled = true;
-            timer = 0.0f;
+            deltatimer = 0.0f;
+            CanShoot();
             ChangePlayerText("P1: Move");
         }
     }
@@ -116,5 +123,11 @@ public class GameManager : MonoBehaviour
     {
         int time = (int)tTimer;
         textTimer.text = time.ToString();
+    }
+
+    void CanShoot()
+    {
+        shootP1.CanShoot = true;
+        shootP2.CanShoot = true;
     }
 }

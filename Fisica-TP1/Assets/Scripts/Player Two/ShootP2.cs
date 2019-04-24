@@ -6,22 +6,25 @@ public class ShootP2 : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     [SerializeField] Transform canon;
+    [SerializeField] bool shoot;
 
     void Start()
     {
-        //canon = GetComponent<Transform>();    
+        shoot = true;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad0))
+        if (Input.GetKeyDown(KeyCode.Keypad0) && shoot == true)
         {
-            /* Transform tform = Instantiate(bullet, canon.transform.position, Quaternion.identity).transform;
-             tform.eulerAngles += transform.eulerAngles;
-             //Instantiate(bullet, canon.transform.position, Quaternion.identity);
-             tform.GetComponent<BulletP2Movement>().Velocity(transform.eulerAngles.y);*/
-
             GameObject go = Instantiate(bullet, canon.position, transform.rotation);
+            shoot = false;
         }
+    }
+
+    public bool CanShoot
+    {
+        get { return shoot; }
+        set { shoot = value; }
     }
 }
