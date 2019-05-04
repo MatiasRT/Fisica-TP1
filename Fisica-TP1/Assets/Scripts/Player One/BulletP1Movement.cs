@@ -67,4 +67,9 @@ public class BulletP1Movement : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public float Speed
+    {
+        set { speed = value; }
+    }
 }

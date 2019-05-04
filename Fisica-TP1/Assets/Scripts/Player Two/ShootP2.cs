@@ -8,6 +8,8 @@ public class ShootP2 : MonoBehaviour
     [SerializeField] Transform canon;
     [SerializeField] bool shoot;
 
+    private UIManager um;
+
     void Start()
     {
         shoot = true;
@@ -18,6 +20,7 @@ public class ShootP2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad0) && shoot == true)
         {
             GameObject go = Instantiate(bullet, canon.position, transform.rotation);
+            go.GetComponent<BulletP2Movement>().Speed = um.SliderP2;
             shoot = false;
         }
     }
