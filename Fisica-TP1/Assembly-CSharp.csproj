@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\General\Box.cs" />
+     <Compile Include="Assets\Scripts\General\Clamp.cs" />
      <Compile Include="Assets\Scripts\General\Health.cs" />
      <Compile Include="Assets\Scripts\Managers\CollisionManager.cs" />
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
