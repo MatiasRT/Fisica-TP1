@@ -53,20 +53,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Character\Movement.cs" />
      <Compile Include="Assets\Scripts\General\Box.cs" />
      <Compile Include="Assets\Scripts\General\Clamp.cs" />
      <Compile Include="Assets\Scripts\General\Health.cs" />
+     <Compile Include="Assets\Scripts\General\Platforms.cs" />
      <Compile Include="Assets\Scripts\Managers\CollisionManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\Platforms\GameManager2.cs" />
+     <Compile Include="Assets\Scripts\Managers\Tanks\GameManager.cs" />
      <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
-     <Compile Include="Assets\Scripts\Player One\BulletP1Movement.cs" />
-     <Compile Include="Assets\Scripts\Player One\CanonP1Movement.cs" />
-     <Compile Include="Assets\Scripts\Player One\ShootP1.cs" />
-     <Compile Include="Assets\Scripts\Player One\TankP1Movement.cs" />
-     <Compile Include="Assets\Scripts\Player Two\BulletP2Movement.cs" />
-     <Compile Include="Assets\Scripts\Player Two\CanonP2Movement.cs" />
-     <Compile Include="Assets\Scripts\Player Two\ShootP2.cs" />
-     <Compile Include="Assets\Scripts\Player Two\TankP2Movement.cs" />
+     <Compile Include="Assets\Scripts\Tanks\Player One\BulletP1Movement.cs" />
+     <Compile Include="Assets\Scripts\Tanks\Player One\CanonP1Movement.cs" />
+     <Compile Include="Assets\Scripts\Tanks\Player One\ShootP1.cs" />
+     <Compile Include="Assets\Scripts\Tanks\Player One\TankP1Movement.cs" />
+     <Compile Include="Assets\Scripts\Tanks\Player Two\BulletP2Movement.cs" />
+     <Compile Include="Assets\Scripts\Tanks\Player Two\CanonP2Movement.cs" />
+     <Compile Include="Assets\Scripts\Tanks\Player Two\ShootP2.cs" />
+     <Compile Include="Assets\Scripts\Tanks\Player Two\TankP2Movement.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Repositories/Fisica-TP1/Fisica-TP1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
