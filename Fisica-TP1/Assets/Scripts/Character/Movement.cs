@@ -16,12 +16,12 @@ public class Movement : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal2");
 
         if (inputX > 0)
-            transform.position = new Vector3(transform.position.x + (velInicial + (vel * Time.deltaTime)), transform.position.y, 0);
+            transform.position = PhysicsLibrary.Movements.MRU(transform.position, velInicial, vel);
 
         if (inputX < 0)
-            transform.position = new Vector3(transform.position.x - (velInicial + (vel * Time.deltaTime)),transform.position.y, 0);
+            transform.position = PhysicsLibrary.Movements.MRU(transform.position, -velInicial, -vel);
 
-        if(fall)
+        if (fall)
             transform.position = new Vector3(transform.position.x, transform.position.y - (grav * Time.deltaTime), 0);
     }
 
