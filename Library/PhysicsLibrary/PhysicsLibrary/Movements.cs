@@ -11,6 +11,13 @@ namespace PhysicsLibrary
             return vec;
         }
 
+        public static Vector3 MRU(Vector3 vec, Vector3 dir, float speed)
+        {
+            dir *= (speed * Time.deltaTime);
+            vec += dir;
+            return vec;
+        }
+
         public static Vector3 ObliqueShoot(Vector3 vec, float speed, float gravity)
         {
             float velMru = speed * Mathf.Cos(vec.z * Mathf.Deg2Rad);
@@ -24,9 +31,18 @@ namespace PhysicsLibrary
             return vec;
         }
 
-        public static void MCU()
+        public static Vector3 MCU(Vector3 center, float radio, float angle)
         {
-            // pos = posini + velAng * t
+            Vector3 nPos = ((radio * Mathf.Cos(angle) * Vector3.right) + (radio * Mathf.Sin(angle) * Vector3.up));
+            nPos += center;
+            return nPos;
+        }
+
+        public static float AngularVelocity(float angleI, float angleF, float timeI, float timeF)
+        {
+            float angle = angleI - angleF;
+            float time = timeI - timeF;
+            return angle / time;
         }
     }
 }

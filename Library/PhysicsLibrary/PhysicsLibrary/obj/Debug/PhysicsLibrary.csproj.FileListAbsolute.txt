@@ -6,3 +6,10 @@ C:\Users\Administrador\Desktop\PhysicsLibrary\PhysicsLibrary\bin\Debug\PhysicsLi
 C:\Users\Administrador\Desktop\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.csproj.CopyComplete
 C:\Users\Administrador\Desktop\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.dll
 C:\Users\Administrador\Desktop\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.pdb
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\bin\Debug\PhysicsLibrary.dll.config
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\bin\Debug\PhysicsLibrary.dll
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\bin\Debug\PhysicsLibrary.pdb
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.csproj.CoreCompileInputs.cache
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.csproj.CopyComplete
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.dll
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.pdb
