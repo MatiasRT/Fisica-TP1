@@ -10,7 +10,24 @@ public class CarMovement : MonoBehaviour
     [SerializeField] float friction;
     [SerializeField] float acceleration;
     private float timer;
-   
+
+    CollisionManager cm;
+    GameObject enemyCar;
+    Box player;
+    Box enemy;
+    Health health;
+
+    void Start()
+    {
+        cm = CollisionManager.Instance;
+
+        enemyCar = GameManager3.Instance.Enemy;
+
+        player = gameObject.GetComponent<Box>();
+        enemy = enemyCar.GetComponent<Box>();
+        health = player.GetComponent<Health>();
+    }
+
     void Update()
     {
         timer = Time.deltaTime;
@@ -48,6 +65,18 @@ public class CarMovement : MonoBehaviour
         }
         if (transform.position.y > -4 && leftWheel.TractionForce() == 0 && rightWheel.TractionForce() == 0) { 
             transform.position = PhysicsLibrary.Movements.MRU(transform.position,Vector3.down,acceleration);
+        }
+
+        CheckCollision();
+    }
+
+    void CheckCollision()
+    {
+        Debug.Log("Checking...");
+        if (cm.CollisionDetector(player, enemy))
+        {
+            Debug.Log("Colision");
+            //health.Lives -= 1;
         }
     }
 }
