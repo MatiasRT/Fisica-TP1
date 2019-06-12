@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Car\CarCPUMovement.cs" />
      <Compile Include="Assets\Scripts\Car\CarMovement.cs" />
      <Compile Include="Assets\Scripts\Car\Wheel.cs" />
      <Compile Include="Assets\Scripts\Character\Movement.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\General\Clamp.cs" />
      <Compile Include="Assets\Scripts\General\Health.cs" />
      <Compile Include="Assets\Scripts\General\Platforms.cs" />
+     <Compile Include="Assets\Scripts\General\Spawner.cs" />
      <Compile Include="Assets\Scripts\Managers\CollisionManager.cs" />
      <Compile Include="Assets\Scripts\Managers\Platforms\GameManager2.cs" />
      <Compile Include="Assets\Scripts\Managers\Tanks\GameManager.cs" />
