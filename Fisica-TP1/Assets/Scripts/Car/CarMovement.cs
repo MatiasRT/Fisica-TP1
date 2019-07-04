@@ -72,10 +72,10 @@ public class CarMovement : MonoBehaviour
 
     void CheckCollision()
     {
-        Debug.Log("Checking...");
+        //Debug.Log("Checking...");
         if (cm.CollisionDetector(player, enemy))
         {
-            Debug.Log("Colision");
+            //Debug.Log("Colision");
             //health.Lives -= 1;
         }
     }

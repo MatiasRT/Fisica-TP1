@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 2568239134854833006, guid: c7c20b59eb404d741881e6a294ef352a, type: 3}
-  spawnTime: 4
+  spawnTime: 1.5
 --- !u!4 &509207952
 Transform:
   m_ObjectHideFlags: 0
@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 1439103529}
   - component: {fileID: 1439103528}
   - component: {fileID: 1439103530}
+  - component: {fileID: 1439103531}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -514,6 +515,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1469285338}
   enemy: {fileID: 2568239134854833006, guid: c7c20b59eb404d741881e6a294ef352a, type: 3}
+--- !u!114 &1439103531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439103527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9feeb0144f49271438d9107ffc28da1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1096105275}
 --- !u!1 &1469285338
 GameObject:
   m_ObjectHideFlags: 0

@@ -94,8 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velInicial: 0.01
-  vel: 1
-  text: {fileID: 907644279404198131, guid: f60e955e8c227b043998a7d9ca1af243, type: 3}
+  vel: 5
 --- !u!114 &3399482724934139737
 MonoBehaviour:
   m_ObjectHideFlags: 0
