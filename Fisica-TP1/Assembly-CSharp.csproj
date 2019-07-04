@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\General\Box.cs" />
     <Compile Include="Assets\Scripts\General\Clamp.cs" />
     <Compile Include="Assets\Scripts\General\Health.cs" />
+    <Compile Include="Assets\Scripts\General\PanelMovement.cs" />
     <Compile Include="Assets\Scripts\General\Platforms.cs" />
     <Compile Include="Assets\Scripts\General\Spawner.cs" />
     <Compile Include="Assets\Scripts\Managers\Cars\GameManager3.cs" />
