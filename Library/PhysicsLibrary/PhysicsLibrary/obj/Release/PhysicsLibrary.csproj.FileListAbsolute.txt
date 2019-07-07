@@ -1,0 +1,8 @@
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\bin\Release\PhysicsLibrary.dll.config
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\bin\Release\PhysicsLibrary.dll
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\bin\Release\PhysicsLibrary.pdb
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\bin\Release\UnityEngine.dll
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\PhysicsLibrary.csproj.CoreCompileInputs.cache
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\PhysicsLibrary.csproj.CopyComplete
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\PhysicsLibrary.dll
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\PhysicsLibrary.pdb

@@ -486,11 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8fad16e3304d084d94a4199bbd31072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightWheel: {fileID: 1469285341}
   leftWheel: {fileID: 1469285340}
-  actualSpeed: 0
-  friction: 0.8
-  acceleration: 2.5
+  rightWheel: {fileID: 1469285341}
 --- !u!114 &1469285340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,10 +500,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0874f67fa4afc349bed763abf410e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleVel: 0
   speed: 0
-  maxSpeed: 4
-  maxAngleVel: 4
+  maxSpeed: 2
+  accel: 0
+  maxAccel: 1.7
+  radius: 1
+  friction: 0.8
 --- !u!114 &1469285341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,10 +518,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0874f67fa4afc349bed763abf410e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleVel: 0
   speed: 0
-  maxSpeed: 4
-  maxAngleVel: 4
+  maxSpeed: 2
+  accel: 0
+  maxAccel: 1.7
+  radius: 1
+  friction: 0.8
 --- !u!212 &1469285342
 SpriteRenderer:
   m_ObjectHideFlags: 0

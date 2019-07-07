@@ -4,33 +4,15 @@ using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
-    float wheelRadius = 2.0f;
-    float angleI, angleF = 0;
-    float timeI, timeF = 0;
-    [SerializeField] float angleVel;
-    [SerializeField] float speed;
-    [SerializeField] float maxSpeed;
-    [SerializeField] float maxAngleVel;
+    public float speed = 1.0f;
+    public float maxSpeed = 5.0f;
+    public float accel = 0.0f;
+    public float maxAccel = 1.7f;
+    public float radius = 1.0f;
+    public float friction = 0.8f;
 
     void Update()
     {
-        angleI += Time.deltaTime * speed;
-        timeI += Time.deltaTime;
-        angleVel = PhysicsLibrary.Movements.AngularVelocity(angleI, angleF, timeI, timeF);
-        angleF += Time.deltaTime * speed;
-        timeF += Time.deltaTime;
-        speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
-        angleVel = Mathf.Clamp(angleVel, -maxAngleVel, maxAngleVel);    
-    }
-
-    public float TractionForce()
-    {
-        return (angleVel / wheelRadius);
-    }
-
-    public float Speed
-    {
-        get { return speed; }
-        set { speed = value; }
+        if (speed == 0.0f) accel = 0.0f;
     }
 }

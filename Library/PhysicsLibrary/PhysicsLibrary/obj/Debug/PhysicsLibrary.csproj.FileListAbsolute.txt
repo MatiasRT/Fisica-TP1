@@ -13,3 +13,4 @@ D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\Physi
 D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.csproj.CopyComplete
 D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.dll
 D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.pdb
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Debug\PhysicsLibrary.csprojAssemblyReference.cache

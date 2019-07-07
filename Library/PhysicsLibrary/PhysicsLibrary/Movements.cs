@@ -44,5 +44,23 @@ namespace PhysicsLibrary
             float time = timeI - timeF;
             return angle / time;
         }
+
+        public static void ConstantAcceleration(float radius, float acceleration, ref float initialAngularSpeed, float minSpeed, float maxSpeed)
+        {
+            float currentAngularSpeed = 0f;
+
+            currentAngularSpeed = acceleration * Time.deltaTime + initialAngularSpeed;
+
+            currentAngularSpeed = Mathf.Clamp(currentAngularSpeed, minSpeed, maxSpeed);
+
+            initialAngularSpeed = currentAngularSpeed;
+        }
+
+        public static Vector3 NextPositionMRU(float speed, Vector3 dir)
+        {
+            dir *= speed * Time.deltaTime;
+
+            return dir;
+        }
     }
 }
