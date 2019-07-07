@@ -23,10 +23,10 @@ public class PanelMovement : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, 0.0f);
 
-        if (transform.position.y > -20.0f)
+        if (transform.position.y < -46.0f)
         {
-            Debug.Log("Hola");
-            //Destroy(this.gameObject);
+            //Debug.Log("Hola");
+            Destroy(this.gameObject);
         }
     }
 
