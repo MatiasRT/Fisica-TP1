@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 enum State
 {
@@ -78,5 +79,13 @@ public class CarMovement : MonoBehaviour
 
         transform.position += PhysicsLibrary.Movements.NextPositionMRU(carSpeedLeft, dirLeft);
         transform.position += PhysicsLibrary.Movements.NextPositionMRU(carSpeedRight, dirRight);
+
+        CheckSides();
+    }
+
+    void CheckSides()
+    {
+        if(transform.position.x < -9.0f || transform.position.x > 9.0f || transform.position.y < -5.0f || transform.position.y > 5.0f)
+            SceneManager.LoadScene(0);
     }
 }
