@@ -217,10 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2568239134854833006, guid: c7c20b59eb404d741881e6a294ef352a, type: 3}
-  background: {fileID: 3211309864513857893, guid: 84ea84c8a96ea434d8ce45c8bfb85e52,
-    type: 3}
   spawnTimeEnemy: 1.5
-  spawnTimeBgd: 6
 --- !u!4 &509207952
 Transform:
   m_ObjectHideFlags: 0
@@ -389,9 +386,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1439103529}
-  - component: {fileID: 1439103528}
   - component: {fileID: 1439103530}
   - component: {fileID: 1439103531}
+  - component: {fileID: 1439103528}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -408,9 +405,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1439103527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d048b23abe32dc4b8035e8d4491ed13, type: 3}
+  m_Script: {fileID: 11500000, guid: c2fd45000d98d5345bec3a067c20cfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 3211309864513857893, guid: 84ea84c8a96ea434d8ce45c8bfb85e52,
+    type: 3}
+  spawnTimeBgd: 6
 --- !u!4 &1439103529
 Transform:
   m_ObjectHideFlags: 0
@@ -465,8 +465,8 @@ GameObject:
   - component: {fileID: 1469285341}
   - component: {fileID: 1469285340}
   - component: {fileID: 1469285339}
-  - component: {fileID: 1469285344}
   - component: {fileID: 1469285345}
+  - component: {fileID: 1469285344}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -608,12 +608,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1469285338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f4f6d3218796e9428732ef2d5949760, type: 3}
+  m_Script: {fileID: 11500000, guid: d52cddaef27a829459983df8b3b17d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
-  width: 1
-  height: 1
+  hitBoxRadius: {x: 0.5, y: 0.5}
+  type: 1
 --- !u!1 &1837923633
 GameObject:
   m_ObjectHideFlags: 0

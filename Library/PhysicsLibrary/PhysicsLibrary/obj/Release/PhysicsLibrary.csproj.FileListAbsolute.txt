@@ -6,3 +6,4 @@ D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\Phy
 D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\PhysicsLibrary.csproj.CopyComplete
 D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\PhysicsLibrary.dll
 D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\PhysicsLibrary.pdb
+D:\Repositories\Fisica-TP1\Library\PhysicsLibrary\PhysicsLibrary\obj\Release\PhysicsLibrary.csprojAssemblyReference.cache

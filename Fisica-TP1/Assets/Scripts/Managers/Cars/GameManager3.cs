@@ -4,23 +4,6 @@ using UnityEngine;
 
 public class GameManager3 : MonoBehaviour
 {
-    private static GameManager3 instance;
-
-    public static GameManager3 Instance
-    {
-        get
-        {
-            instance = FindObjectOfType<GameManager3>();
-            if (instance == null)
-            {
-                GameObject go = new GameObject("GameManager3");
-                instance = go.AddComponent<GameManager3>();
-            }
-            return instance;
-        }
-    }
-
-
     [SerializeField] GameObject player;
     [SerializeField] GameObject enemy;
 
@@ -34,6 +17,16 @@ public class GameManager3 : MonoBehaviour
     public GameObject Enemy
     {
         get { return enemy; }
+    }
+
+    private void Awake()
+    {
+        PhysicsLibrary.Collisions.CollisionManager cm = PhysicsLibrary.Collisions.CollisionManager.Instance;
+    
+        cm.SetRelation((int)PhysicsLibrary.Collisions.Elements.Player, (int)PhysicsLibrary.Collisions.Elements.Enemy);
+        //colMng.SetRelation((int)Aleman5DLL.Collisions.Elements.Player, (int)Aleman5DLL.Collisions.Elements.Enviroment);
+        //colMng.SetRelation((int)Aleman5DLL.Collisions.Elements.Enemy, (int)Aleman5DLL.Collisions.Elements.Enviroment);
+    
     }
 
     private void Start()

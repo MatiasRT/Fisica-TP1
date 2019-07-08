@@ -14,22 +14,6 @@ public class CarMovement : MonoBehaviour
     [SerializeField] Wheel leftWheel;
     [SerializeField] Wheel rightWheel;
 
-    CollisionManager cm;
-    /*GameObject enemyCar;
-    Box player;
-    Box enemy;
-    Health health;*/
-
-    void Start()
-    {
-        cm = CollisionManager.Instance;
-
-        /*enemyCar = GameManager3.Instance.Enemy;
-
-        player = gameObject.GetComponent<Box>();
-        enemy = enemyCar.GetComponent<Box>();
-        health = player.GetComponent<Health>();*/
-    }
 
     void Update()
     {
@@ -95,14 +79,4 @@ public class CarMovement : MonoBehaviour
         transform.position += PhysicsLibrary.Movements.NextPositionMRU(carSpeedLeft, dirLeft);
         transform.position += PhysicsLibrary.Movements.NextPositionMRU(carSpeedRight, dirRight);
     }
-
-    /*void CheckCollision()
-    {
-        //Debug.Log("Checking...");
-        if (cm.CollisionDetector(player, enemy))
-        {
-            //Debug.Log("Colision");
-            //health.Lives -= 1;
-        }
-    }*/
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8519275389000169065}
   - component: {fileID: 5443729958595220866}
   - component: {fileID: 143585336779920946}
-  - component: {fileID: 3399482724934139737}
+  - component: {fileID: 3363839672145576400}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velInicial: 0.01
   vel: 5
---- !u!114 &3399482724934139737
+--- !u!114 &3363839672145576400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,9 +104,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2568239134854833006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f4f6d3218796e9428732ef2d5949760, type: 3}
+  m_Script: {fileID: 11500000, guid: 748873a4916ad0a4eb494eb0c64af3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
-  width: 1
-  height: 1
+  hitBoxRadius: {x: 0.5, y: 0.5}
+  type: 2

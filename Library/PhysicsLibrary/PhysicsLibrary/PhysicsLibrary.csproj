@@ -55,6 +55,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collisions.cs" />
     <Compile Include="Movements.cs" />
   </ItemGroup>
   <ItemGroup>
