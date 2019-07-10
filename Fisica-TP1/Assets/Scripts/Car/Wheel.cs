@@ -13,6 +13,7 @@ public class Wheel : MonoBehaviour
 
     void Update()
     {
-        if (speed == 0.0f) accel = 0.0f;
+        if (speed == 0.0f) 
+            accel = 0.0f;
     }
 }
